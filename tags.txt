@@ -1,0 +1,150 @@
+Tagging usually means creating a **Git tag** to mark a specific commit, often used for **releases like v1.0, v2.0, etc.**
+
+It helps you easily refer to important versions of your project.
+
+---
+
+# 1. What is Tagging in Git
+
+A **tag** is a label attached to a specific commit.
+
+Example:
+
+```
+v1.0 → First stable version
+v1.1 → Bug fixes
+v2.0 → Major update
+```
+
+Tags are commonly used for **software releases**.
+
+---
+
+# 2. Types of Tags
+
+There are two types:
+
+### 1️⃣ Lightweight Tag
+
+Just a pointer to a commit.
+
+```
+git tag v1.0
+```
+
+---
+
+### 2️⃣ Annotated Tag (Recommended)
+
+Stores extra information like:
+
+* tagger name
+* date
+* message
+
+```
+git tag -a v1.0 -m "First release"
+```
+
+---
+
+# 3. Steps to Tag a Project
+
+Suppose you already committed your code.
+
+### Step 1: Create a tag
+
+```
+git tag -a v1.0 -m "First release"
+```
+
+---
+
+### Step 2: Check tags
+
+```
+git tag
+```
+
+Output example:
+
+```
+v1.0
+```
+
+---
+
+### Step 3: Push tag to GitHub
+
+By default tags are **not pushed automatically**.
+
+Push one tag:
+
+```
+git push origin v1.0
+```
+
+Push all tags:
+
+```
+git push --tags
+```
+
+---
+
+# 4. Tagging Example (Complete Flow)
+
+```
+git add .
+git commit -m "Completed login feature"
+
+git tag -a v1.0 -m "First version"
+
+git push origin main
+git push origin v1.0
+```
+
+---
+
+# 5. View Tag Details
+
+```
+git show v1.0
+```
+
+It shows:
+
+* commit
+* author
+* tag message
+
+---
+
+# 6. Delete a Tag
+
+Delete locally:
+
+```
+git tag -d v1.0
+```
+
+Delete from GitHub:
+
+```
+git push origin --delete v1.0
+```
+
+---
+
+✅ **Simple way to remember**
+
+| Command                | Use           |
+| ---------------------- | ------------- |
+| `git tag v1.0`         | create tag    |
+| `git tag`              | list tags     |
+| `git push origin v1.0` | push tag      |
+| `git push --tags`      | push all tags |
+
+---
+
+If you want, I can also explain **one important GitHub mistake beginners make with tags during projects or internships**, which many students don’t realize.
